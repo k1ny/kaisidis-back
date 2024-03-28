@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "watch": ["index.js"],
+  "ignore": ["*.test.js", "**/fixtures/**"],
+  "exec": "node -r dotenv/config index.js"
+}
