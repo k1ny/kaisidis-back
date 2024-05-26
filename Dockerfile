@@ -7,7 +7,7 @@ COPY package.json .
 COPY pnpm-lock.yaml .
 
 FROM base AS prod-deps
-RUN pnpm --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 FROM base
 COPY --from=prod-deps /usr/src/app/node_modules /usr/src/app/node_modules
